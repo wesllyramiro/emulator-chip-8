@@ -1,7 +1,7 @@
 package chip
 
 type Data struct {
-	ram            [4096]byte
+	Ram            [4096]byte
 	register       [16]byte // byte == uint8
 	i              uint16
 	programCounter uint16

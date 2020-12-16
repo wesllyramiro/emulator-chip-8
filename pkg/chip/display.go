@@ -19,16 +19,16 @@ func DrawSprite(m *Data, x, y, height int, address uint16) bool {
 		line := (y + byte) % 32
 		fb1 := line*8 + byteNaLinha
 		fb2 := line*8 + ((byteNaLinha + 1) % 8)
-		spr1 := m.ram[byteAddress] >> offsetProBit
-		spr2 := m.ram[byteAddress] << (8 - offsetProBit)
+		spr1 := m.Ram[byteAddress] >> offsetProBit
+		spr2 := m.Ram[byteAddress] << (8 - offsetProBit)
 		if m.frameBuffer[fb1]&spr1 != 0 {
 			colisão = true
 		}
 		if m.frameBuffer[fb2]&spr2 != 0 {
 			colisão = true
 		}
-		m.frameBuffer[fb1] ^= m.ram[byteAddress] >> offsetProBit
-		m.frameBuffer[fb2] ^= m.ram[byteAddress] << (8 - offsetProBit)
+		m.frameBuffer[fb1] ^= m.Ram[byteAddress] >> offsetProBit
+		m.frameBuffer[fb2] ^= m.Ram[byteAddress] << (8 - offsetProBit)
 	}
 	return colisão
 }
