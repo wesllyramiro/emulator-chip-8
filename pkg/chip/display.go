@@ -2,7 +2,7 @@ package chip
 
 import "fmt"
 
-func drawSprite(m *data, x, y, height int, address uint16) bool {
+func DrawSprite(m *Data, x, y, height int, address uint16) bool {
 	colisão := false
 	if x > 63 {
 		return false
@@ -33,7 +33,7 @@ func drawSprite(m *data, x, y, height int, address uint16) bool {
 	return colisão
 }
 
-func drawDisplay(m *data) {
+func DrawDisplay(m *Data) {
 
 	black := '█'
 	white := ' '

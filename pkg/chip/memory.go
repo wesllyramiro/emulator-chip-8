@@ -1,6 +1,6 @@
 package chip
 
-type data struct {
+type Data struct {
 	ram            [4096]byte
 	register       [16]byte // byte == uint8
 	i              uint16
@@ -16,7 +16,7 @@ type data struct {
 
 type opcode uint16
 
-var characters [4096]byte = [4096]byte{
+var Characters [4096]byte = [4096]byte{
 	// localização de memória de cada letra
 	// é "letra" em hexadecimal VEZES 5
 	0xF0, 0x90, 0x90, 0x90, 0xF0, // 0
